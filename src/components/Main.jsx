@@ -1,9 +1,10 @@
 import React from "react";
+import {Picker} from './'
 
 const Main = () => {
   return (
     <div>
-      <h1>i am main</h1>
+      <Picker />
     </div>
   );
 };

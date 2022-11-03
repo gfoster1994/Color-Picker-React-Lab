@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {Color} from "./"
 
-// write your Color component here
+// const Picker = () => {
+//   const [selectedColor, setSelectedColor] = useState("red")
+//   const selectColor = (colorName) => {
+//     setSelectedColor(colorName)
+//   }
+//   return (
+//     <div id="container">
+//       <div id="navbar">
+//         <div>Currently selected: </div>
+//         <div className={selectedColor}>{selectedColor}</div>
+//       </div>
+//       <div id="colors-list">
+//         <Color color="green" selectColor={selectColor}/>
+//         <Color color ="blue" selectColor={selectColor}/>
+//         <Color color = "red" selectColor={selectColor}/> 
+//       </div>
+//     </div>
+//   );
+// }
 
 const Picker = () => {
+  const [selectedColor, setSelectedColor] = useState("red")
+  const selectColor = (colorName) => {
+    setSelectedColor(colorName)
+  }
   return (
     <div id="container">
       <div id="navbar">
         <div>Currently selected: </div>
-        <div className="red">red</div>
+        <div className={selectedColor}>{selectedColor}</div>
       </div>
-      <div id="colors-list">{/* colors go here */}</div>
+      <div id="colors-list">
+        <Color color="green" selectColor={selectColor}/>
+        <Color color ="blue" selectColor={selectColor}/>
+        <Color color = "red" selectColor={selectColor}/> 
+      </div>
     </div>
   );
 }
